@@ -17,7 +17,7 @@ class Tree(pygame.sprite.Sprite):
             self.rect = self.image.get_rect(topleft = (self.x, self.y+config.tree_distance))
 
     def delete(self):
-        if self.x <= -config.tree_weight:
+        if self.rect.right <= 0:
             self.kill()
 
     def update(self):

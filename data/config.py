@@ -18,4 +18,4 @@ tree_distance = 90
 tree_min_y = screen_y*1//4
 tree_max_y = screen_y-tree_min_y-tree_distance
 tree_speed = 3.5
-tree_time = 1600
+tree_time = 1500

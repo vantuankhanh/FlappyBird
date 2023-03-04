@@ -1,26 +1,24 @@
 import pygame
 import data.config as config
 
-screen = pygame.display.set_mode((config.screen_x, config.screen_y))
-
-bird1 = pygame.image.load('image/bird1.png').convert_alpha()
-bird1 = pygame.transform.smoothscale(bird1, (config.bird_scale_x, config.bird_scale_y))
-bird2 = pygame.image.load('image/bird2.png').convert_alpha()
-bird2 = pygame.transform.smoothscale(bird2, (config.bird_scale_x, config.bird_scale_y))
-bird3 = pygame.image.load('image/bird3.png').convert_alpha()
-bird3 = pygame.transform.smoothscale(bird3, (config.bird_scale_x, config.bird_scale_y))
-bird4 = pygame.image.load('image/bird4.png').convert_alpha()
-bird4 = pygame.transform.smoothscale(bird4, (config.bird_scale_x, config.bird_scale_y))
-bird5 = pygame.image.load('image/bird5.png').convert_alpha()
-bird5 = pygame.transform.smoothscale(bird5, (config.bird_scale_x, config.bird_scale_y))
-bird5 = pygame.transform.rotate(bird5, - config.bird_rotate)
-bird6 = pygame.image.load('image/bird6.png').convert_alpha()
-bird6 = pygame.transform.smoothscale(bird6, (config.bird_scale_x, config.bird_scale_y))
-bird6 = pygame.transform.rotate(bird6, - config.bird_rotate)
-
 class Bird(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
+        bird1 = pygame.image.load('image/bird1.png').convert_alpha()
+        bird1 = pygame.transform.smoothscale(bird1, (config.bird_scale_x, config.bird_scale_y))
+        bird2 = pygame.image.load('image/bird2.png').convert_alpha()
+        bird2 = pygame.transform.smoothscale(bird2, (config.bird_scale_x, config.bird_scale_y))
+        bird3 = pygame.image.load('image/bird3.png').convert_alpha()
+        bird3 = pygame.transform.smoothscale(bird3, (config.bird_scale_x, config.bird_scale_y))
+        bird4 = pygame.image.load('image/bird4.png').convert_alpha()
+        bird4 = pygame.transform.smoothscale(bird4, (config.bird_scale_x, config.bird_scale_y))
+        bird5 = pygame.image.load('image/bird5.png').convert_alpha()
+        bird5 = pygame.transform.smoothscale(bird5, (config.bird_scale_x, config.bird_scale_y))
+        bird5 = pygame.transform.rotate(bird5, - config.bird_rotate)
+        bird6 = pygame.image.load('image/bird6.png').convert_alpha()
+        bird6 = pygame.transform.smoothscale(bird6, (config.bird_scale_x, config.bird_scale_y))
+        bird6 = pygame.transform.rotate(bird6, - config.bird_rotate)
+
         self.bird_fly_1 = [bird1, bird2]
         self.bird_fly_2 = [bird3, bird4]
         self.bird_fly_3 = [bird5, bird6]
