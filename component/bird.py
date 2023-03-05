@@ -4,6 +4,7 @@ import data.config as config
 class Bird(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
+        #Bird image
         bird1 = pygame.image.load('image/bird1.png').convert_alpha()
         bird1 = pygame.transform.smoothscale(bird1, (config.bird_scale_x, config.bird_scale_y))
         bird2 = pygame.image.load('image/bird2.png').convert_alpha()
@@ -18,11 +19,15 @@ class Bird(pygame.sprite.Sprite):
         bird6 = pygame.image.load('image/bird6.png').convert_alpha()
         bird6 = pygame.transform.smoothscale(bird6, (config.bird_scale_x, config.bird_scale_y))
         bird6 = pygame.transform.rotate(bird6, - config.bird_rotate)
+        bird7 = pygame.image.load('image/bird7.png').convert_alpha()
+        bird7 = pygame.transform.smoothscale(bird7, (config.bird_scale_x, config.bird_scale_y))
 
         self.bird_fly_1 = [bird1, bird2]
         self.bird_fly_2 = [bird3, bird4]
         self.bird_fly_3 = [bird5, bird6]
         self.bird_fly_index = 0
+        self.bird_fall = bird7
+        self.bird_rotate = 0
 
         #Initial place
         self.image = self.bird_fly_1[self.bird_fly_index]
@@ -43,8 +48,8 @@ class Bird(pygame.sprite.Sprite):
     def fly_down(self):
         self.gravity += config.gravity_increase
         self.rect.y += self.gravity
-        if self.rect.bottom >= config.screen_y:
-            self.rect.bottom = config.screen_y
+        if self.rect.bottom >= config.screen_y - config.ground_y:
+            self.rect.bottom = config.screen_y - config.ground_y
         elif self.rect.top <= 0:
             self.rect.top = 0
 
