@@ -1,11 +1,11 @@
 import pygame
 import data.config as config
+from screen.service.image import GetImage
 
 class Tree(pygame.sprite.Sprite):
     def __init__(self, side, y):
         super().__init__()
-        self.image = pygame.image.load('image/wood.png').convert_alpha()
-        self.image = pygame.transform.smoothscale(self.image, (config.tree_weight, config.tree_height))
+        self.image = GetImage.wood()
         self.x = config.tree_start_x
         self.y = y
         self.side = side
