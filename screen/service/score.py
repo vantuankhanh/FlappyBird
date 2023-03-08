@@ -4,6 +4,7 @@ from screen.service.visualize import GetImage, GetFont
 
 class Score():
     score = 0
+    score_board_appear = False
 
     @staticmethod
     def create_high_score_file():
@@ -49,18 +50,9 @@ class Score():
 
     @staticmethod
     def create_score_board(screen):
-        #Scoreboard
-        score_board = GetImage.scoreboard()
-        score_board_rect = score_board.get_rect(midbottom = (config.screen_x//2, config.screen_y + config.scoreboard_height))
-
-        font_scoreboard = GetFont.score_board()
-
-        medal = GetImage.medal()
-        medal_rect = medal.get_rect(center = (250,260))
 
         show_score = font_scoreboard.render(f'Score: {Score.score}', True, config.scoreboard_color)
         show_score_rect = show_score.get_rect(x = 160, y = 130)
-
         show_highscore = font_scoreboard.render(f'Best: {Score.get_high_score()}', True, config.scoreboard_color)
         show_highscore_rect = show_score.get_rect(x = 160, y = 180)
 
@@ -73,3 +65,28 @@ class Score():
             score_board_rect.bottom = config.screen_y - config.ground_y + 10
             if Score.score > Score.get_high_score():
                 score_board.blit(medal, medal_rect)
+            Score.score_board_appear = True
+        
+        if Score.score_board_appear == True:
+            play_again_text = font_play_again.render('Press SPACE to play again', True, config.play_again_color)
+            play_again_text_rect = play_again_text.get_rect(center = (config.play_again_x//2, 22))
+
+            screen.blit(play_again, play_again_rect)
+            play_again.blit(play_again_text, play_again_text_rect)
+            play_again_rect.centery -= 10
+            if play_again_rect.centery <= config.screen_y - config.play_again_y//2 - 10:
+                play_again_rect.centery = config.screen_y - config.play_again_y//2 - 10
+
+#Scoreboard
+score_board = GetImage.scoreboard()
+score_board_rect = score_board.get_rect(midbottom = (config.screen_x//2, config.screen_y + config.scoreboard_height))
+
+medal = GetImage.medal()
+medal_rect = medal.get_rect(center = (250,260))
+
+play_again = GetImage.play_again()
+play_again_rect = play_again.get_rect(center = (config.screen_x//2, config.screen_y + (config.screen_y - config.play_again_y//2 - 10)))
+
+#Font
+font_scoreboard = GetFont.score_board()
+font_play_again = GetFont.play_again()

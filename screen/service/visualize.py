@@ -63,10 +63,19 @@ class GetImage:
     def medal():
         return get_image(IMAGE / 'medal.png', config.medal_x, config.medal_y)
     
+    @staticmethod
+    def play_again():
+        return get_image(IMAGE / 'play_again_box.png', config.play_again_x, config.play_again_y)
+    
 class GetFont:
     @staticmethod
     def score():
         return pygame.font.Font(FONT / 'score.ttf', config.score_font_size)
     
+    @staticmethod
     def score_board():
-        return pygame.font.Font(FONT / 'score.ttf', config.score_font_size)
+        return pygame.font.Font(FONT / 'score.ttf', config.scoreboard_font_size)
+    
+    @staticmethod
+    def play_again():
+        return pygame.font.Font(FONT / 'score.ttf', config.play_again_font_size)

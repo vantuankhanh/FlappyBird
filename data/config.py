@@ -29,6 +29,9 @@ tree_speed = 3.5
 tree_time = 1500
 
 score_font_size = 40
+scoreboard_font_size = 40
+play_again_font_size = 25
+
 score_color = '#EB0A0A'
 scoreboard_ratio = 534//467
 scoreboard_weight = screen_x*2//3
@@ -37,3 +40,8 @@ scoreboard_color = '#B75317'
 
 medal_x = 55
 medal_y = 55
+
+play_again_ratio = 215//82
+play_again_x = screen_x*4//5
+play_again_y = ground_y - 35
+play_again_color = '#AF1435'
