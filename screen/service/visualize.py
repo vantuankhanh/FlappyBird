@@ -12,6 +12,22 @@ def get_image(path, x, y):
 
 class GetImage:
     @staticmethod
+    def title():
+        return get_image(IMAGE / 'title.png', config.title_w, config.title_h)
+    
+    @staticmethod
+    def bird_menu_1():
+        return get_image(IMAGE / 'bird1.png', config.bird_menu_w, config.bird_menu_h)
+    
+    @staticmethod
+    def bird_menu_2():
+        return get_image(IMAGE / 'bird2.png', config.bird_menu_w, config.bird_menu_h)
+    
+    @staticmethod
+    def space_button():
+        return get_image(IMAGE / 'space_button.png', config.space_button_w, config.space_button_h)
+
+    @staticmethod
     def img1():
         return get_image(IMAGE / 'bird1.png', config.bird_scale_x, config.bird_scale_y)
     
@@ -64,10 +80,26 @@ class GetImage:
         return get_image(IMAGE / 'medal.png', config.medal_x, config.medal_y)
     
     @staticmethod
+    def nice():
+        return get_image(IMAGE / 'nice.png', config.medal_x, config.medal_y)
+    
+    @staticmethod
+    def sad():
+        return get_image(IMAGE / 'sad.png', config.medal_x, config.medal_y)
+    
+    @staticmethod
     def play_again():
         return get_image(IMAGE / 'play_again_box.png', config.play_again_x, config.play_again_y)
     
+    @staticmethod
+    def game_over():
+        return get_image(IMAGE / 'game_over_box.png', config.game_over_x, config.game_over_y)
+    
 class GetFont:
+    @staticmethod
+    def menu():
+        return pygame.font.Font(FONT / 'space_menu.ttf', config.menu_font_size)
+
     @staticmethod
     def score():
         return pygame.font.Font(FONT / 'score.ttf', config.score_font_size)
@@ -78,4 +110,8 @@ class GetFont:
     
     @staticmethod
     def play_again():
-        return pygame.font.Font(FONT / 'score.ttf', config.play_again_font_size)
+        return pygame.font.Font(FONT / 'play_again.ttf', config.play_again_font_size)
+    
+    @staticmethod
+    def game_over():
+        return pygame.font.Font(FONT / 'score.ttf', config.game_over_font_size)
