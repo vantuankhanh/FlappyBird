@@ -34,3 +34,6 @@ scoreboard_ratio = 534//467
 scoreboard_weight = screen_x*2//3
 scoreboard_height = scoreboard_weight//scoreboard_ratio
 scoreboard_color = '#B75317'
+
+medal_x = 55
+medal_y = 55

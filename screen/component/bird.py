@@ -1,6 +1,6 @@
 import pygame
-import data.config as config
-from screen.service.image import GetImage
+from data import config
+from screen.service.visualize import GetImage
 
 class Bird(pygame.sprite.Sprite):
     def __init__(self):
@@ -15,14 +15,13 @@ class Bird(pygame.sprite.Sprite):
 
         self.bird_fall = GetImage.img7()
         self.bird_fall = pygame.transform.rotate(self.bird_fall, - 0)
-        self.last_y = 0
 
         #Initial property
         self.collision = False
         self.image = self.bird_fly_1[self.bird_fly_index]
         self.rect = self.image.get_rect(center = (config.screen_x//3, config.screen_y//2))
         self.gravity = 0
-        self.jump = 1
+        self.jump = True
         self.start_jump = 0
 
         
@@ -30,10 +29,10 @@ class Bird(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and self.jump:
             self.gravity = - config.gravity_jump
-            self.jump = 0
+            self.jump = False
             self.start_jump = pygame.time.get_ticks()
         elif not keys[pygame.K_SPACE]:
-            self.jump = 1
+            self.jump = True
 
     def fly_down(self):
         self.gravity += config.gravity_increase

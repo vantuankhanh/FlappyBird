@@ -1,6 +1,6 @@
 import pygame
-import data.config as config
-from screen.service.image import GetImage
+from data import config
+from screen.service.visualize import GetImage
 
 class Tree(pygame.sprite.Sprite):
     def __init__(self, side, y):

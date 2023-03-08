@@ -1,18 +1,18 @@
 import pygame
-import data.config as config
-from data.game_class import GameMode
+from data import config
+from data.game_class import Game
 from screen.game_screen import play_screen, end_screen
 
 def main():
 
     while True: 
 
-        if GameMode.mode == 'menu':
+        if Game.mode == 'menu':
             # menu_screen(screen)
-            GameMode.mode = 'play'
-        elif GameMode.mode == 'play':
+            Game.mode = 'play'
+        elif Game.mode == 'play':
             play_screen()
-        elif GameMode.mode == 'end':
+        elif Game.mode == 'end':
             end_screen()
 
         pygame.display.update()

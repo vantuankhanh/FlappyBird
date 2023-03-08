@@ -1,7 +1,12 @@
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).parent
-SCREEN_DIR = ROOT_DIR / "screen"
-IMAGE_DIR = ROOT_DIR / "image"
-DATA_DIR = ROOT_DIR / "data"
-AUDIO_DIR = DATA_DIR / "audio"
+ROOT = Path(__file__).parent
+
+DATA = ROOT / "data"
+AUDIO = DATA / "audio"
+IMAGE = DATA / "image"
+FONT = DATA / 'font'
+
+SCREEN = ROOT / "screen"
+COMPONENT = SCREEN / 'component'
+SERVICE = SCREEN / 'service'
