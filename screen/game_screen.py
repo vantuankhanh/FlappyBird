@@ -6,6 +6,7 @@ from screen.component.tree import Tree
 from data.game_class import Game, Collision
 from screen.service.visualize import GetImage, GetFont
 from screen.service.score import Score
+from screen.service.sound import GetSound
 
 pygame.init()
 
@@ -13,6 +14,7 @@ def display_background():
     screen.blit(background, (0,0))
 
 def menu_screen():
+    
     global bird_menu_index, bird_menu_rect, bird_menu, move, down
     display_background()
 
@@ -77,6 +79,7 @@ def play_screen():
     Score.play_score(screen, bird, tree)
 
     if Collision.get == True:
+        GetSound.crash().play()
         bird.sprite.collision = True
         Score.create_high_score_file()
         Score.update_high_score()

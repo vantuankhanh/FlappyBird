@@ -1,6 +1,7 @@
 import pygame
 from data import config
 from screen.service.visualize import GetImage
+from screen.service.sound import GetSound
 
 class Bird(pygame.sprite.Sprite):
     def __init__(self):
@@ -16,6 +17,8 @@ class Bird(pygame.sprite.Sprite):
         self.bird_fall = GetImage.img7()
         self.bird_fall = pygame.transform.rotate(self.bird_fall, - 0)
 
+        self.jump_sound = GetSound.swing()
+
         #Initial property
         self.collision = False
         self.image = self.bird_fly_1[self.bird_fly_index]
@@ -28,6 +31,7 @@ class Bird(pygame.sprite.Sprite):
     def player_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and self.jump:
+            self.jump_sound.play()
             self.gravity = - config.gravity_jump
             self.jump = False
             self.start_jump = pygame.time.get_ticks()
