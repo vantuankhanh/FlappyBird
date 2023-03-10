@@ -28,3 +28,7 @@ class GetSound:
     @staticmethod
     def crash():
         return pygame.mixer.Sound(AUDIO / 'crash.ogg')
+    
+    @staticmethod
+    def point():
+        return pygame.mixer.Sound(AUDIO / 'point.ogg')

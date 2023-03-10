@@ -1,6 +1,7 @@
 from data import config
 import os
 from screen.service.visualize import GetImage, GetFont
+from screen.service.sound import GetSound
 
 class Score():
     score = 0
@@ -61,6 +62,8 @@ class Score():
             if t.rect.right <= bird.sprite.rect.left and t.can_score == True:
                 t.can_score = False
                 score_add += 0.5
+                point_sound.play()
+                
         return int(score_add)
 
     @staticmethod
@@ -100,7 +103,7 @@ class Score():
         Score.score_board_rect.bottom -= 10
         if Score.score_board_rect.bottom <= config.screen_y - config.ground_y + 10:
             Score.score_board_rect.bottom = config.screen_y - config.ground_y + 10
-            if Score.score >= Score.get_high_score():
+            if Score.score > Score.get_high_score():
                 Score.score_board.blit(Score.medal, Score.medal_rect)
             elif Score.score <= 10:
                 Score.score_board.blit(Score.sad, Score.sad_rect)
@@ -125,3 +128,7 @@ class Score():
 font_game_over = GetFont.game_over()
 font_scoreboard = GetFont.score_board()
 font_play_again = GetFont.play_again()
+
+#Point sound
+point_sound = GetSound.point()
+point_sound.set_volume(1)
