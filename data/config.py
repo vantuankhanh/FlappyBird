@@ -31,9 +31,9 @@ bird_x = screen_x//3
 bird_y = screen_y//2
 bird_scale_x = 55
 bird_scale_y = 55
-bird_danger = screen_y*(2.6//5)
-bird_time_rotate = 380
-bird_rotate = 70
+bird_danger = (screen_y-ground_y)*2.6//5 #height where bird will change animation to img 3,4
+bird_time_rotate = 380 #time bird will change animation to img 3,4
+bird_rotate = 70 #angle bird will change animation to img 3,4
 
 gravity_increase = 0.7 #gravity increase per frame
 gravity_jump = 9 #pixel of bird fly up
@@ -44,8 +44,8 @@ tree_start_x = screen_x
 tree_min_y = screen_y*1//9 #min tree up lengths
 tree_max_y = (screen_y-ground_y-ground_top_y)*6//10 #max tree up lengths
 tree_speed = 3.5 #tree movement speed
-tree_time = 1500 #time to next tree
-tree_distance = 150 #distance from tree up to tree down
+tree_time = 1600 #time to next tree
+tree_distance = 190 #distance from tree up to tree down
 
 menu_font_size = 28
 score_font_size = 40

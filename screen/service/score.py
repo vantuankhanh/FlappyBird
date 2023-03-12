@@ -64,10 +64,24 @@ class Score():
                 score_add += 0.5
                 point_sound.play()
                 
+                #level up 1: decrease distance between tree up and down
+                if Score.score%5==0 and Score.score>0:
+                    config.tree_distance -= 10
+                    if config.tree_distance <= 150:
+                        config.tree_distance = 150
+                #level up 2: gravity increase
+                if config.tree_distance <= 150:
+                    config.gravity_increase = 0.9
+                #level up 3: time next tree appear decrease
+                if Score.score >= 80:
+                    config.tree_time -= 100
+                    if config.tree_time <= 1200:
+                        config.tree_time = 1200                
+                
         return int(score_add)
 
     @staticmethod
-    def play_score(screen, bird, tree):
+    def play_score(screen, bird, tree): #show score to game screen
         font_score = GetFont.score()
         Score.score += Score.get_score(bird, tree)
         score_board = font_score.render(f'{Score.score}', True, config.score_color)

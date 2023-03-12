@@ -46,11 +46,13 @@ class Bird(pygame.sprite.Sprite):
 
     def fly_animation(self):        
         current_time = pygame.time.get_ticks()
+        #index to change animation of the swing
         self.bird_fly_index += 0.1
         if self.bird_fly_index >= 2:
             self.bird_fly_index = 0
+        #change animation from img12 to img34
         if current_time - self.start_jump < config.bird_time_rotate:
-            if self.rect.centery < config.bird_danger:
+            if self.rect.y <= config.bird_danger:
                 self.image = self.bird_fly_1[int(self.bird_fly_index)]
             else:
                 self.image = self.bird_fly_2[int(self.bird_fly_index)]                

@@ -27,11 +27,12 @@ def menu_screen():
     screen.blit(title, title_rect)
 
     screen.blit(bird_menu, bird_menu_rect)
+    #animate the swing
     bird_menu_index += 0.06
     if bird_menu_index >= 2:
         bird_menu_index = 0
     bird_menu = bird_menu_list[int(bird_menu_index)]
-
+    #animate move up and down
     move += 0.07
     if down == True:
         bird_menu_rect.y += move
@@ -58,6 +59,7 @@ def play_screen():
             # tree_y = config.tree_min_y
             tree.add(Tree('up', tree_y),Tree('down', tree_y))
 
+    #draw the top of the ground
     screen.blit(ground_top, ground_top_rect)
     if Collision.get == False:
         ground_top_rect.left -= config.ground_speed
@@ -69,6 +71,7 @@ def play_screen():
 
     tree.draw(screen)        
 
+    #draw the bottom of the ground
     screen.blit(ground, ground_rect)
     if Collision.get == False:
         tree.update()
@@ -76,6 +79,7 @@ def play_screen():
         if ground_rect.x <= -20:
             ground_rect.x = 0
 
+    #update the score
     Score.play_score(screen, bird, tree)
 
     if Collision.get == True:
@@ -94,6 +98,7 @@ def end_screen():
     tree.draw(screen)
     screen.blit(ground, ground_rect)
 
+    #animate the bird to fall down
     bird.draw(screen)
     bird.update()
 

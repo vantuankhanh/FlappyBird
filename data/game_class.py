@@ -23,7 +23,9 @@ class Game:
         Score.play_again_rect = Score.play_again.get_rect(center = (config.screen_x//2, config.screen_y + (config.screen_y - config.play_again_y//2 - 10)))
         Score.game_over_rect = Score.game_over.get_rect(center = (config.screen_x//2, - config.game_over_y))
         Collision.get = False
-
+        config.tree_time = 1600
+        config.tree_distance = 190
+        config.gravity_increase = 0.7
 
 class Collision:
     get = False
