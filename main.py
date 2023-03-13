@@ -23,6 +23,5 @@ pygame.init()
 
 clock = pygame.time.Clock()
 
-
 if __name__ == '__main__':
     main()
