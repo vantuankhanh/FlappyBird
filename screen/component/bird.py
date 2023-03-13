@@ -27,7 +27,7 @@ class Bird(pygame.sprite.Sprite):
         self.jump = True
         self.start_jump = 0
 
-        
+    #Player's control by SPACE    
     def player_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and self.jump:

@@ -30,6 +30,7 @@ class Game:
 class Collision:
     get = False
 
+    #Check collision
     @staticmethod
     def collision(bird, tree):
         collision_list = pygame.sprite.spritecollide(bird.sprite, tree, False)
