@@ -1,6 +1,8 @@
 import pygame
 from paths import AUDIO
 from random import choice
+import sys
+sys.dont_write_bytecode = True
 
 class GetSound:
 

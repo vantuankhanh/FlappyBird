@@ -1,4 +1,6 @@
 from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).parent
 

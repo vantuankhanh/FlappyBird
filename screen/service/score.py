@@ -2,6 +2,8 @@ from data import config
 import os
 from screen.service.visualize import GetImage, GetFont
 from screen.service.sound import GetSound
+import sys
+sys.dont_write_bytecode = True
 
 class Score():
     score = 0

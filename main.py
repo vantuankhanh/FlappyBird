@@ -3,6 +3,8 @@ from data import config
 from data.game_class import Game
 from screen.game_screen import menu_screen,play_screen, end_screen
 from screen.service.sound import GetSound
+import sys
+sys.dont_write_bytecode = True
 
 def main():
 

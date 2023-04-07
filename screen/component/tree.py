@@ -1,6 +1,8 @@
 import pygame
 from data import config
 from screen.service.visualize import GetImage
+import sys
+sys.dont_write_bytecode = True
 
 class Tree(pygame.sprite.Sprite):
     def __init__(self, side, y):

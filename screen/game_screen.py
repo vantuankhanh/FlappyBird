@@ -7,6 +7,8 @@ from data.game_class import Game, Collision
 from screen.service.visualize import GetImage, GetFont
 from screen.service.score import Score
 from screen.service.sound import GetSound
+import sys
+sys.dont_write_bytecode = True
 
 pygame.init()
 

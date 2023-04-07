@@ -2,6 +2,8 @@ import pygame
 from data import config
 from screen.service.visualize import GetImage
 from screen.service.sound import GetSound
+import sys
+sys.dont_write_bytecode = True
 
 class Bird(pygame.sprite.Sprite):
     def __init__(self):

@@ -2,7 +2,8 @@ import pygame
 from screen.service.score import Score
 from data import config
 from screen.service.visualize import GetImage
-from sys import exit
+import sys
+sys.dont_write_bytecode = True
 
 class Game:
     mode = 'menu'
@@ -12,7 +13,7 @@ class Game:
     def quit_program(event):
         if event.type == pygame.QUIT:
             pygame.quit()
-            exit()
+            sys.exit()
 
     @staticmethod
     def reset():

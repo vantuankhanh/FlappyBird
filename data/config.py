@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 screen_x = 500
 screen_y = 600
 fps = 60

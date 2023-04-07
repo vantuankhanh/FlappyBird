@@ -1,6 +1,8 @@
 import pygame
 from data import config
 from paths import IMAGE, FONT
+import sys
+sys.dont_write_bytecode = True
 
 pygame.init()
 screen = pygame.display.set_mode((config.screen_x, config.screen_y))
