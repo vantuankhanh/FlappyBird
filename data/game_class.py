@@ -2,6 +2,7 @@ import pygame
 from screen.service.score import Score
 from data import config
 from screen.service.visualize import GetImage
+from sys import exit
 
 class Game:
     mode = 'menu'
